@@ -5,15 +5,35 @@
 const num = 5; // цифры
 const str = 'Hello world!'; // строка
 let bool = true; // булево значение принимает либо true, либо false
-let und; // undefined
+let und; // undefined (это значение мы почти никогда сами не присваиваем, но его присваивает сам JS, когда не может найти какое-то значение, к которому мы обращаемся)
 const bigInt = 25002195224663795n; // целые большие числа > 2^53
 const symbol = Symbol(); // уникальные неизменяемые данные
 
-let donutHole = null; // специальный примитив
+let donutHole = null; // специальный примитив (пустое значение, которое, в отличии от undefined, используют разработчики, которые например задают какую-то переменную, но пока в ней никакого значения не требуется, но в будущем оно будет, либо наоборот, когда им нужно избавиться от данных, то их можно перезаписать null'ом)
 
 // Также есть структурные типы данных
-const object = {}; // объект
-const array = []; // массив (разновидность объекта)
+let object = {
+	a: 5,
+	b: 'javascript',
+	c: false,
+	d: {
+		a: 10,
+		b: 15
+	},
+	e: [1, 2, 3]
+}; // объект
+console.log(object.d);
+console.log(object['e']);
+object.e = [4, 5];
+console.log(object['e']);
+object.names = ['Kate', 'Al'];
+console.log(object);
+object = null;
+console.log(object);
+
+
+const array = [1, 'b', {a: 2, b: 'hello'}, true]; // массив (разновидность объекта)
+console.log(array[2]);
 
 // Функции в различном написании
 const func1 = function () {}; // функции
