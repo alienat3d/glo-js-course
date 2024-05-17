@@ -201,3 +201,12 @@ console.log(froggySays.split('e'));
 let usCompanies = 'Apple, IBM, Google, SpaceX, Yahoo';
 
 console.log(usCompanies.split(', '));
+
+/* ||---------------------------------------------->> 
+* Links:
+* [Типы данных] https://developer.mozilla.org/ru/docs/Web/JavaScript/Data_structures
+* [Числа] https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number
+* [Строки] https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String
+* [Выражения и операторы] https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Expressions_and_Operators
+* [Условный (тернарный) оператор] https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/%D0%A3%D1%81%D0%BB%D0%BE%D0%B2%D0%BD%D1%8B%D0%B9_%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80
+*/ 
