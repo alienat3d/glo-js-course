@@ -20,10 +20,10 @@ console.log(i);
 
 /* ||---------------------------------------------->> 
 * Links:
-* [Правильный выбор имени переменной] https://learn.javascript.ru/variable-names
-* [Объект консоль] https://developer.mozilla.org/ru/docs/Web/API/Console
-* [Обучение git в игровой форме - LearnGitBranching] https://learngitbranching.js.org/
-* [Интерактивный тур по git] https://githowto.com/ru
+* [✓][Правильный выбор имени переменной] https://learn.javascript.ru/variable-names
+* [✓][Объект консоль] https://developer.mozilla.org/ru/docs/Web/API/Console
+* [✓][Обучение git в игровой форме - LearnGitBranching] https://learngitbranching.js.org/
+* [✓][Интерактивный тур по git] https://githowto.com/ru
 * [Часто задаваемые вопросы по git] http://firstaidgit.ru/
-* [Советы по стилю кода] https://learn.javascript.ru/coding-style
+* [✓][Советы по стилю кода] https://learn.javascript.ru/coding-style
 */ 
