@@ -125,6 +125,8 @@ const countDivision = function (a, b = 1) {
 
 console.log(countDivision(9, 3, 4, 15, 63, 99, 155));
 
+// todo Также см. [../piece-of-code/concat.js]
+
 // * Чистые функции («детерминированные») * \\
 // ? «Чистой функцией» или «детерминированной» называют такую функцию, результат выполнения которой зависит только от входных параметров. Также для чистоты необходимо ещё одно условие — они не должны нести в себе побочные эффекты, такие как: вызовы в консоль, алерты, обращения к серверу и обращения к DOM-дереву.
 // ? Очень рекомендуется соблюдать чистоту кода также внутри функции, ведь такие функции гораздо проще читать, поддерживать и тестировать.
@@ -252,8 +254,22 @@ console.log(a = addSquares(2, 3)); // возвращает 13
 console.log(b = addSquares(3, 4)); // возвращает 25
 console.log(c = addSquares(4, 5)); // возвращает 41
 
+// * == Остаточные параметры (Rest parameters) == * \\
+
+// ? Остаточные параметры предоставляют нам массив неопределённых аргументов.
+
+// В примере мы используем остаточные параметры, чтобы собрать аргументы с индексами со 2-го до последнего. Затем мы умножим каждый из них на значение первого аргумента. В этом примере используется стрелочная функция (Arrow functions), о которой будет рассказано в следующей секции.
+
+function multiply(multiplier, ...theArgs) {
+  return theArgs.map((x) => multiplier * x);
+}
+
+const arr = multiply(2, 1, 2, 3);
+console.log(arr); // [2, 4, 6]
+
 /* ||---------------------------------------------->> 
 * Links:
-* [https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Functions] Функции
-* [https://habr.com/ru/post/151716/] Callback функции
+* [✓][https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Functions] Функции
+* [✓][https://habr.com/ru/post/151716/] Callback функции
+* [https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/] ES6 In Depth: Arrow functions
 */ 
