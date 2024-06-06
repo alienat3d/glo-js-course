@@ -96,6 +96,25 @@ do {
 	potatoes--;
 } while (potatoes > 0);
 
+// =================== \\
+// Ещё примеры
+
+const namesArr = ['Катя', 'Лёша', 'Даша', 'Саня', 'Оксана', 'Женя', 'Лена', 'Костя', 'Оля', 'Ирина', 'Антон', 'Егор', 'Тима', 'Толик', 'Вова'];
+
+function printArr(arr, index = 0) {
+	console.log(arr[index]);
+	if (index < arr.length) printArr(arr, ++index);
+}
+
+printArr(namesArr);
+
+function printArrReverse(arr, index) {
+	console.log(arr[index]);
+	if (index >= 0) printArrReverse(arr, --index);
+}
+
+printArrReverse(namesArr, namesArr.length);
+
 /* ||---------------------------------------------->> 
 * Links:
 * [✓][https://habr.com/ru/post/337030/] Как работает рекурсия

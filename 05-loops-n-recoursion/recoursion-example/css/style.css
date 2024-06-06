@@ -1,0 +1,71 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    font-family: Arial, Verdana, sans-serif;
+}
+
+ul {
+    list-style: none;
+    padding-left: 30px;
+    margin: 0;
+    display: inline-block;
+}
+
+li {
+    margin: 12px 0;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 40px 15px;
+    margin: 0 auto;
+}
+
+.parent {
+    cursor: pointer;
+}
+
+.parent::before {
+    position: relative;
+    content: '+';
+    display: inline-block;
+    background-color: blue;
+    color: white;
+    font-size: 14px;
+    width: 18px;
+    height: 18px;
+    padding: 2px;
+    text-align: center;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.parent.open::before {
+    transform: rotate(45deg);
+}
+
+.parent ul {
+    cursor: default;
+    display: none;
+}
+
+.parent.open>ul {
+    display: block;
+}
