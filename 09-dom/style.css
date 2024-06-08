@@ -1,0 +1,41 @@
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+ul {
+	display: flex;
+	justify-content: center;
+	list-style: none;
+	gap: 25px 50px;
+}
+
+a {
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: 700;
+	font-size: 20px;
+	color: #000;
+}
+
+h1 {
+	border-top: 2px solid #000;
+	border-bottom: 2px solid #000;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.green-color {
+	color: green;
+}
