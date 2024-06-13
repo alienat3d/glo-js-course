@@ -1,7 +1,8 @@
-<h1 align="center">Glo Academy JS Course</h1>
-<h3 align="center">Notes to the lessons & Pet-projects</h3>
+<h1 align="center">« Intensive JavaScript Course »</h1>
+<h3 align="center">[Notes to the lessons & Pet-projects]</h3>
+<h4 align="center"><a href="https://glo.academy/jscript/" target="_blank">at Glo Academy</a></h4>
 
-## Time spent to create this project:
+## Time spent in this project:
 
 [![wakatime](https://wakatime.com/badge/github/alienat3d/glo-js-course.svg)](https://wakatime.com/badge/github/alienat3d/glo-js-course)
 
