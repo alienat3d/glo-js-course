@@ -118,6 +118,8 @@ const user = {
 
 document.cookie = 'user=' + JSON.stringify(user);
 
+// todo Далее переходим в [../piece-of-code/todo-list/]
+
 /* ||---------------------------------------------->> 
 * Links:
 * [][https://mdn.github.io/dom-examples/web-storage/] Демо LocalStorage
