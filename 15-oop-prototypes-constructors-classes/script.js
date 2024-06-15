@@ -76,6 +76,7 @@ newGal.age = 31;
 const employee = {
 	workplace: 1,
 	dinner: 1,
+	companyName: '«WwW-Technologies Inc.»',
 	goToWork: function () {
 		console.log('идёт на работу');
 	},
@@ -85,6 +86,19 @@ const employee = {
 	working: function () {
 		console.log('занят работой');
 	},
+	sayHello: function () {
+		console.log(
+			'Привет, меня зовут ' + 
+			this.name + 
+			'. Я работаю в компании ' + 
+			this.companyName + 
+			' в должности ' + 
+			this.grade + 
+			' ' + 
+			this.role + 
+			'.'
+		);
+	}
 }
 
 // 3.1 Теперь, на основе объекта-шаблона создадим две профессии front-end dev & back-end dev.
@@ -106,7 +120,104 @@ backEndDev.working = function () {
 	console.log('Мучаюсь с базами данных и серверным API, считаю себя лучшим программистом в компании.');
 };
 
-[с 11:40 дальше]
+// 3.4 Добавим в компанию ещё несколько сотрудников-разработчиков
+const developer1 = Object.create(frontEndDev);
+const developer2 = Object.create(frontEndDev);
+const developer3 = Object.create(backEndDev);
+const developer4 = Object.create(backEndDev);
+
+developer1.name = 'Al';
+developer2.name = 'Alex';
+developer3.name = 'Anton';
+developer4.name = 'Roman';
+developer1.grade = 'Junior';
+developer2.grade = 'Middle';
+developer3.grade = 'Senior';
+developer4.grade = 'Junior';
+
+// 3.5 [↑] В объект-прототип мы добавили метод sayHello(), выводящий в консоль строку-приветствие от лица каждого разработчика, пользуясь контекстом вызова и ключевым словом "this". Теперь запустим этот метод от каждого из них.
+developer1.sayHello();
+developer2.sayHello();
+developer3.sayHello();
+developer4.sayHello();
+
+// 3.6 Теперь представим, что за хорошую работу всем фронтэнд-разработчикам увеличили кол-во обедов до 2-ух, исправить мы это можем очень просто, назначив, через прототип-фронтэнд-дев новое значение свойству dinner:
+frontEndDev.dinner = 2;
+
+console.log(developer1.dinner);
+console.log(developer2.dinner);
+console.log(developer3.dinner);
+console.log(developer4.dinner);
+
+// * = Методы для работы с объектами и прототипами = * \\
+
+// * Метод 'hasOwnProperty'
+// ? Аргументом в этот метод передаётся свойство, которое хотим проверить на наличие и если оно есть, то возвращается 'true', иначе 'false'. Проверяются именно их личные свойства, игнорируя прототипы.
+
+console.log(developer1.hasOwnProperty('name')); // true
+console.log(developer1.hasOwnProperty('role')); // false
+console.log(developer1.__proto__.hasOwnProperty('role')); // true
+console.log(developer1.__proto__.__proto__.hasOwnProperty('workplace')); // true
+
+// * Метод 'isPrototypeOf()'
+// ? Проверяет является ли один объект прототипом другого.
+
+console.log(frontEndDev.isPrototypeOf(developer1)); // true
+console.log(frontEndDev.isPrototypeOf(developer4)); // false
+
+// * === Функция-конструктор === * \\
+
+// ? 4.0 Функция-конструктор может быть незаменима, когда нам нужно создать очень много однотипных объектов. А сама функция-конструктор — это по сути любая функция, которая использует оператор "new" перед своим названием, чтобы создавать новые сущности.
+
+// 4.1.0 Ведь, чем писать постоянно вручную множество однотипных объектов [...]
+/* const person1 = {
+	name: 'Jack',
+}
+const person2 = {
+	name: 'John',
+}
+const person3 = {
+	name: 'James',
+} */
+// 4.1.1 [...] намного удобнее будет создавать их через функцию-конструктор.
+// ? Кстати, в JS принято называть функцию конструктор с большой буквы.
+// ? 4.2 Сама функция-конструктор это просто описание будущих объектов, на основе которого они будут создаваться.
+
+const Person = function (name) {
+	this.name = name;
+	// 4.3.1 [...]
+	// return this; — на самом деле под капотом JS возвращается из функции "this"
+}
+
+// 4.3.1 Далее функция-конструктор возвращает объект и кладёт его в переменную, которую мы создали.
+const person1 = new Person('Jack');
+const person2 = new Person('John');
+const person3 = new Person('James');
+
+// ? Кстати, если мы не передадим в функцию-конструктор никаких аргументов, то она всё равно создастся, но только пустой и свойство "name" будет со значением "undefined".
+const person4 = new Person;
+
+// ? 4.3.0 Итак, когда интерпретатор считает слово "new", то в памяти JS создастся новый пустой объект, затем вызывается сама функция Person, а затем этому пустому объекту направляется контекст вызова "this". Далее этому объекту приписываются те свойства, которые мы описали в функции-конструкторе. Далее функция-конструктор возвращает новый объект. [см. ↑]
+
+// 4.4.0 Для примера создадим обычный объект и сравним с объектом, созданным функцией-конструктором
+const person5 = {
+	name: 'Anna'
+}
+// 4.4 Теперь, если сравнить объекты, то мы заметим, что у объекта, созданного функцией-конструктором во вкладке [[Prototype]] есть не только [[Prototype]]: Object, но и свойство constructor. Зачем же нужна эта прослойка? В данный прототип мы можем добавить собственные методы.
+console.log(person1);
+console.log(person5);
+
+// 4.5 Добавим функции-конструктору Person метод "sayHello()"
+Person.prototype.sayHello = function () {
+	console.log('Всем привет! Меня зовут ' + this.name);
+}
+
+person1.sayHello();
+person3.sayHello();
+
+console.log(person1); // теперь в прототипе всех объектов, созданных при помощи функции-конструктора появился метод sayHello();
+
+// todo c [25:47]
 
 /* ||---------------------------------------------->> 
 * Links:
