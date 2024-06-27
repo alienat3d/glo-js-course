@@ -24,7 +24,7 @@ const sum2 = (...args) => {
 	return result;
 }
 
-console.log(sum2(25, 59, 57, 23, 29, 23, 11, 45));
+console.log(sum2());
 
 // * == Оператор Spread (оператор расширения) == * \\
 
