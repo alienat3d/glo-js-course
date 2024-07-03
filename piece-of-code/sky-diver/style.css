@@ -1,0 +1,29 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+.main {
+	overflow: hidden;
+	position: relative;
+	height: 100vh;
+	background: lightblue url("img/landscape.jpg") no-repeat bottom/cover;
+}
+.airplane, 
+.sky-diver {
+	position: absolute;
+}
+.airplane {
+	top: 30px;
+	left: 30px;
+	width: 250px;
+	height: 148px;
+	background: url("img/airplane-illustration.png") no-repeat center/contain;
+}
+.sky-diver {
+	top: 10px;
+	left: 150px;
+	width: 150px;
+	height: 202px;
+	background: url("img/sky-diver-illustration.png") no-repeat center/contain;
+}
