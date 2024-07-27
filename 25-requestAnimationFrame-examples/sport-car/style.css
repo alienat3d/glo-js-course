@@ -1,11 +1,18 @@
 body {
+	margin: 0;
 	overflow-x: hidden;
+}
+h1{
+	text-align: center;
 }
 .wrapper{
 	position: relative;
+  border-bottom: 3px black groove;
+  height: 200px;
 }
 .car {
+	cursor: pointer;
 	position: absolute;
-	top: 200px;
+	top: 7px;
 	width: 300px;
 }
