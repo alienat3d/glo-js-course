@@ -1,0 +1,26 @@
+body {
+	background-color: #fff;
+}
+
+h1 {
+	margin-top: 3%;
+	text-align: center;
+	color: #333;
+}
+
+#field {
+	margin-top: 200px;
+  position: relative;
+  border-bottom: 3px black groove;
+  height: 200px;
+}
+
+#ball {
+  cursor: pointer;
+  position: absolute;
+}
+
+.ball {
+	width: 40px;
+	height: 40px;
+}

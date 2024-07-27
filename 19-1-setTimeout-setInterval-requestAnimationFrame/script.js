@@ -108,7 +108,7 @@ const logger3 = (str) => {
 /* ||---------------------------------------------->> 
 * Links:
 * [][https://html5.by/blog/what-is-requestanimationframe/] Что такое requestAnimationFrame?
-* [][https://learn.javascript.ru/js-animation] JavaScript-анимации
+* [✓][https://learn.javascript.ru/js-animation] JavaScript-анимации
 * [][https://learn.javascript.ru/datetime] Дата и Время
 * [][https://habr.com/ru/post/60957/] Микропаттерны оптимизации в Javascript
 * [][https://medium.com/nuances-of-programming/%D1%87%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-throttling-%D0%B8-debouncing-4f0a839769ef] Что такое Throttling и Debouncing?
