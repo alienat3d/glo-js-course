@@ -2,6 +2,9 @@ import { UserService } from "./modules/user-service";
 import { renderFunc } from "./modules/render";
 import { addUsersFunc } from "./modules/add-users";
 import { removeUsersFunc } from "./modules/remove-users";
+import { changePermissionsFunc } from "./modules/change-permissions";
+import { editUsersFunc } from "./modules/edit-users";
+import { filterUsersFunc } from "./modules/filter-users";
 
 // * 3.0 Создадим новый экземпляр класса UserService. Т.к. на не требуется передавать параметры, поэтому можно без "()"
 // const userService = new UserService;
@@ -19,9 +22,11 @@ userService.getUsers().then(data => renderFunc(data));
 
 addUsersFunc();
 removeUsersFunc();
+changePermissionsFunc();
+editUsersFunc();
+filterUsersFunc();
 
 /* ||---------------------------------------------->>
-todo начинаем смотреть с 39:50
 * Links:
 * [✓][https://github.com/typicode/json-server] JSON-server
-*/ 
+*/

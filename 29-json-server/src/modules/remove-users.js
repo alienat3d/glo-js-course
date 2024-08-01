@@ -7,7 +7,7 @@ export const removeUsersFunc = () => {
 	// 8.2.0 Теперь мы можем что-то получить с родительского кнопки удаления тега <tr>. И брать мы будем дата-атрибут "key", который будет различать все строчки. Мы добавим data-атрибут каждому <tr> в render(), т.о. он будет соответствовать id в объекте базы данных с данными для каждого пользователя.
 	tbody.addEventListener('click', (evt) => {
 		const tgt = evt.target;
-		console.log(tgt);
+
 		if (tgt.closest('.btn-remove')) {
 			const tr = tgt.closest('tr');
 

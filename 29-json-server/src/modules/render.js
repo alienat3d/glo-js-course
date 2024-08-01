@@ -15,12 +15,12 @@ export const renderFunc = (users) => {
 				<td>${user.children ? 'Есть' : 'Нет'}</td>
 				<td>
 					<div class="form-check form-switch">
-						<input class="form-check-input" type="checkbox" role="switch" name="user-${+user.id + 1}" ${user.permissions ? 'checked' : ''}>
+						<input class="form-check-input" type="checkbox" role="switch" name="user-${index + 1}" ${user.permissions ? 'checked' : ''}>
 					</div>
 				</td>
 				<td>
 					<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-						<button type="button" class="btn btn-warning">
+						<button type="button" class="btn btn-warning btn-edit">
 							<i class="bi-pencil-square"></i>
 						</button>
 						<button type="button" class="btn btn-danger btn-remove">
