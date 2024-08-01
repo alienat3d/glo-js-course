@@ -99,6 +99,8 @@ try {
 // 4.3 Таким образом мы получили ошибку, но код продолжил работать дальше.
 console.log('some code');
 
+// todo Практика в: [./3d-modeling/lesson27/homework]
+
 /* ||---------------------------------------------->> 
 * Links:
 * [][https://developer.mozilla.org/ru/docs/Learn/JavaScript/Objects/JSON] JSON
