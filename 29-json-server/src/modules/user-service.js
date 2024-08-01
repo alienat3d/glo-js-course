@@ -110,8 +110,16 @@ export class UserService {
 
 	// * [->] 11.4.1 Теперь мы создадим метод получения фильтрованных данных filterUsers(). Мы будем после "?" передавать опции фильтрации и проверять на "true"
 	// todo 11.4.2 переход [filter-users.js][->]
-	filterUsers(filterOptions) {
-		return fetch(`http://localhost:3333/users?${filterOptions}=true`)
+	filterUsers(filterOption) {
+		return fetch(`http://localhost:3333/users?${filterOption}=true`)
+			.then(res => res.json());
+	}
+
+	// * [->] 12.4.1 Создадим метод сортировки. Снова перейдём в документацию JSON-Server и посмотрим, что нам нужно дописать в URL для сортировки. А она предполагает добавление двух параметров "_sort" (параметр по которому идёт сортировка) и "_order" (на увеличение или уменьшение будет идти сортировка "desc" & "asc").
+	// 12.4.2 А передавать аргументами будем объект
+	// todo 12.4.3 переход в [sort-users.js][->]
+	getSortUsers(sortOption) {
+		return fetch(`http://localhost:3333/users?_sort=${sortOption}`)
 			.then(res => res.json());
 	}
 }
