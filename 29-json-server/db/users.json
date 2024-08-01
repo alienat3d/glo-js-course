@@ -53,7 +53,7 @@
       "name": "София",
       "email": "sonechka@mail.ru",
       "children": false,
-      "permissions": false,
+      "permissions": true,
       "id": "66a9"
     }
   ]

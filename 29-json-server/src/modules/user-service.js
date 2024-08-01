@@ -107,4 +107,11 @@ export class UserService {
 		})
 			.then(res => res.json());
 	}
+
+	// * [->] 11.4.1 Теперь мы создадим метод получения фильтрованных данных filterUsers(). Мы будем после "?" передавать опции фильтрации и проверять на "true"
+	// todo 11.4.2 переход [filter-users.js][->]
+	filterUsers(filterOptions) {
+		return fetch(`http://localhost:3333/users?${filterOptions}=true`)
+			.then(res => res.json());
+	}
 }
