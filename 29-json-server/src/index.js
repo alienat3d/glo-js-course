@@ -6,6 +6,7 @@ import { changePermissionsFunc } from "./modules/change-permissions";
 import { editUsersFunc } from "./modules/edit-users";
 import { filterUsersFunc } from "./modules/filter-users";
 import { sortUsersFunc } from "./modules/sort-users";
+import { searchUsersFunc } from "./modules/search-users";
 
 // * 3.0 Создадим новый экземпляр класса UserService. Т.к. на не требуется передавать параметры, поэтому можно без "()"
 // const userService = new UserService;
@@ -27,6 +28,7 @@ changePermissionsFunc();
 editUsersFunc();
 filterUsersFunc();
 sortUsersFunc();
+searchUsersFunc();
 
 /* ||---------------------------------------------->>
 * Links:

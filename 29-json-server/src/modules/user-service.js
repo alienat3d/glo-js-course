@@ -122,4 +122,9 @@ export class UserService {
 		return fetch(`http://localhost:3333/users?_sort=${sortOption}`)
 			.then(res => res.json());
 	}
+	// ! К сожалению функция поиска в таком виде ('name_like=${str}') не работает и нужно найти как её сделать рабочей
+	getSearchUsers(str) {
+		return fetch(`http://localhost:3333/users?name_like=${str}`)
+			.then(res => res.json());
+	}
 }
