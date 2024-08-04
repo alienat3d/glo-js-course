@@ -5,7 +5,7 @@
       "name": "Al",
       "email": "psy.alienated@gmail.com",
       "children": true,
-      "permissions": false
+      "permissions": true
     },
     {
       "id": "1",
@@ -15,46 +15,39 @@
       "permissions": true
     },
     {
-      "id": "2",
       "name": "Katerina",
-      "email": "ketie-g@aloha.com",
+      "email": "ketie@aloha.com",
       "children": true,
-      "permissions": true
+      "permissions": false,
+      "id": "2"
     },
     {
       "id": "3",
       "name": "Bill",
       "email": "bill.gates@microsoft.com",
       "children": false,
-      "permissions": false
-    },
-    {
-      "id": "8f51",
-      "name": "James",
-      "email": "j.doe@gmail.com",
-      "children": false,
-      "permissions": false
-    },
-    {
-      "id": "86de",
-      "name": "Василий",
-      "email": "vasyavasilok@inbox.ru",
-      "children": false,
-      "permissions": false
+      "permissions": true
     },
     {
       "name": "Sebastian",
       "email": "seba777@hotmail.com",
       "children": true,
-      "permissions": false,
+      "permissions": true,
       "id": "b958"
     },
     {
-      "name": "София",
+      "name": "Sofia",
       "email": "sonechka@mail.ru",
       "children": false,
-      "permissions": true,
+      "permissions": false,
       "id": "66a9"
+    },
+    {
+      "name": "Ivan Pigeon",
+      "email": "i.pigeon@gmail.com",
+      "children": true,
+      "permissions": false,
+      "id": "ualAAT7"
     }
   ]
 }

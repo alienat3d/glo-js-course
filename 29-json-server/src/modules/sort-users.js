@@ -1,27 +1,105 @@
 import { renderFunc } from "./render";
 
-// * 12.0 Задача этого модуля в том, чтобы сортировать список уже отрендереных на странице пользователей, кликнув по заголовку в таблице
 export const sortUsersFunc = () => {
 	const tableHeaders = document.querySelectorAll('thead th');
-	// 12.1 И для начала получим заголовок, столбец которого мы хотим сортировать
+	const headerName = tableHeaders[1];
+	const headerEmail = tableHeaders[2];
 	const headerHaveChildren = tableHeaders[3];
-	// 12.2 А также нам понадобится изменяемая переменная со значением по умолчанию — false. Она нужна для того, чтобы по клику сортировка менялась с на увеличения на уменьшение. 
+	const headerHavePermissions = tableHeaders[4];
 	let isSort = false;
 
-	// 12.3 По клику значение isSort будет менять своё значение на противоположное
-	// todo 12.4.0 перейдём в [user-service.js]
 	headerHaveChildren.addEventListener('click', () => {
-		// * [->] 12.4.3 Вызовем новый метод сортировки и передадим в него объект, где name у нас будет "children", а value: тернарник, который будет передавать либо 'asc', либо 'desc' в нашу сортировку. Своего рода переключатель.
-		// 12.5 Осталось лишь отрисовать наших пользователей функцией renderFunc()
-		userService.getSortUsers(isSort ? 'children' : '-children')
-			.then(users => renderFunc(users));
+		// Для последней версии JSON-server
+		// userService.getSortUsers(isSort ? 'children' : '-children')
+		// 	.then(users => renderFunc(users));
+		// Для версии JSON-server 0.17.3
+		tableHeaders.forEach(th => {
+			if (th.classList.contains('sort-asc')) {
+				th.classList.remove('sort-asc');
+			} else if (th.classList.contains('sort-desc')) {
+				th.classList.remove('sort-desc');
+			}
+		});
+		userService.getSortUsers({
+			name: 'children',
+			value: isSort ? 'asc' : 'desc'
+		}).then(users => renderFunc(users));
 
 		if (isSort) {
-			headerHaveChildren.classList.remove('sort-up');
-			headerHaveChildren.classList.add('sort-down');
+			headerHaveChildren.classList.remove('sort-desc');
+			headerHaveChildren.classList.add('sort-asc');
 		} else {
-			headerHaveChildren.classList.remove('sort-down');
-			headerHaveChildren.classList.add('sort-up');
+			headerHaveChildren.classList.remove('sort-asc');
+			headerHaveChildren.classList.add('sort-desc');
+		}
+
+		isSort = !isSort;
+	})
+	headerHavePermissions.addEventListener('click', () => {
+		tableHeaders.forEach(th => {
+			if (th.classList.contains('sort-asc')) {
+				th.classList.remove('sort-asc');
+			} else if (th.classList.contains('sort-desc')) {
+				th.classList.remove('sort-desc');
+			}
+		});
+		userService.getSortUsers({
+			name: 'permissions',
+			value: isSort ? 'asc' : 'desc'
+		}).then(users => renderFunc(users));
+
+		if (isSort) {
+			headerHavePermissions.classList.remove('sort-desc');
+			headerHavePermissions.classList.add('sort-asc');
+		} else {
+			headerHavePermissions.classList.remove('sort-asc');
+			headerHavePermissions.classList.add('sort-desc');
+		}
+
+		isSort = !isSort;
+	})
+	headerName.addEventListener('click', () => {
+		tableHeaders.forEach(th => {
+			if (th.classList.contains('sort-asc')) {
+				th.classList.remove('sort-asc');
+			} else if (th.classList.contains('sort-desc')) {
+				th.classList.remove('sort-desc');
+			}
+		});
+		userService.getSortUsers({
+			name: 'name',
+			value: isSort ? 'asc' : 'desc'
+		}).then(users => renderFunc(users));
+
+		if (isSort) {
+			headerName.classList.remove('sort-desc');
+			headerName.classList.add('sort-asc');
+		} else {
+			headerName.classList.remove('sort-asc');
+			headerName.classList.add('sort-desc');
+		}
+
+		isSort = !isSort;
+	})
+	headerEmail.addEventListener('click', () => {
+		tableHeaders.forEach(th => {
+			if (th.classList.contains('sort-asc')) {
+				th.classList.remove('sort-asc');
+			} else if (th.classList.contains('sort-desc')) {
+				th.classList.remove('sort-desc');
+			}
+		});
+		userService.getSortUsers({
+			name: 'email',
+			value: isSort ? 'asc' : 'desc'
+		}).then(users => renderFunc(users));
+
+		if (isSort) {
+			headerEmail.classList.remove('sort-desc');
+			headerEmail.classList.add('sort-asc');
+		} else {
+			headerEmail.classList.remove('sort-asc');
+			headerEmail.classList.add('sort-desc');
 		}
 
 		isSort = !isSort;
