@@ -3,6 +3,15 @@ export const renderFunc = (users) => {
 
 	tbody.innerHTML = '';
 
+	const errorMessage =  () => {
+		const errorMessage = document.createElement('p');
+		errorMessage.classList.add('error-message');
+		errorMessage.textContent = 'Произошла ошибка, данных нет! ¯\\_(ツ)_/¯';
+		document.querySelector('.table').insertAdjacentElement('afterend', errorMessage);
+	}
+
+	if (!users) return errorMessage();
+
 	users.forEach((user, index) => {
 		tbody.insertAdjacentHTML('beforeend', `
 			<tr data-key="${user.id}">
