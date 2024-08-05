@@ -1,22 +1,6 @@
-import { errorMessage } from "./helpers";
-
 export class UserService {
 	SERVER_URL = 'http://localhost:3333/users';
 
-	/* getData(url, method) {
-		return fetch(url, {
-			method: method
-		}).then(res => {			
-			if (res.status !== 200) {
-				res.json();
-			}
-			console.log('error');
-			throw new Error("Произошла ошибка, данных нет!");
-		}).catch(error => {
-			console.error(error.message);
-			errorMessage();
-		});
-	} */
 	getData(url, method) {
 		return fetch(url, {
 			method: method
@@ -49,15 +33,6 @@ export class UserService {
 			console.error(error.message);
 		});
 	}
-	/* saveData(url, method, obj) {
-		return fetch(url, {
-			method: method,
-			body: JSON.stringify(obj),
-			headers: {
-				'Content-Type': 'application/json'
-			}
-		}).then(res => res.json());
-	} */
 
 	getUsers() {
 		return userService.getData(userService.SERVER_URL);
