@@ -1,0 +1,25 @@
+.btn {
+	margin-top: 20px;
+	margin-left: 75px;
+	padding: 10px 15px;
+	background-color: slategrey;
+	color: yellow;
+	font-size: 18px;
+}
+
+.circle {
+	transition-property: width, height;
+	transition-duration: 2s;
+	position: fixed;
+	transform: translateX(-50%) translateY(-50%);
+	background-color: red;
+	border-radius: 50%;
+}
+
+.message-ball {
+	font-size: 20px;
+	line-height: 200px;
+	text-align: center;
+	font-size: 30px;
+	color: lawngreen;
+}

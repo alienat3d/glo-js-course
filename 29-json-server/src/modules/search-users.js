@@ -7,7 +7,7 @@ export const searchUsersFunc = () => {
 	const debounceSearch = debounce(() => {
 		userService.getSearchUsers(searchInput.value)
 			.then(users => renderFunc(users))
-	}, 3000);
+	}, 300);
 
 	searchInput.addEventListener('input', debounceSearch);
 }
