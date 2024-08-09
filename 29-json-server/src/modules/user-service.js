@@ -9,11 +9,11 @@ export class UserService {
 				if (res.status === 200) {
 					return res.json();
 				} else {
-					throw new Error("Произошла ошибка, данных нет!");
+					throw new Error("Произошла ошибка, данные не были найдены!");
 				}
 			})
 			.catch(error => {
-				console.error(error.message);
+				error => console.warn(error)
 			});
 	}
 	saveData(url, method, obj) {
@@ -23,15 +23,17 @@ export class UserService {
 			headers: {
 				'Content-Type': 'application/json'
 			}
-		}).then(res => {
-			if (res.status === 201) {
-				return res.json();
-			} else {
-				throw new Error("Произошла ошибка, данные не были сохранены!");
-			}
-		}).catch(error => {
-			console.error(error.message);
-		});
+		})
+			.then(res => {
+				if (res.status === 201) {
+					return res.json();
+				} else {
+					throw new Error("Произошла ошибка, данные не были сохранены!");
+				}
+			})
+			.catch(error => {
+				console.warn(error);
+			});
 	}
 
 	getUsers() {
